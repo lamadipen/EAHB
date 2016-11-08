@@ -1,6 +1,8 @@
 package edu.mum.hw2.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 @Entity
@@ -9,11 +11,30 @@ public class Project {
 	@GeneratedValue
 	private int proj_id;
 	private String name;
+	@Temporal(TemporalType.DATE)
 	private Date startDate;
+	@Temporal(TemporalType.DATE)
 	private Date endDate;
 	private String description;
 	private String status;
+	private String location;
 	
+	@OneToMany
+	@JoinColumn(name="proj_id")
+	private List<Task> listTasks= new ArrayList<>();
+	
+	@ElementCollection
+	@JoinTable(name="Beneficiary",joinColumns=@JoinColumn(name="proj_id"))
+	private List<Beneficiary> listBenificiaries = new ArrayList<>();
+	
+	public List<Beneficiary> getListBenificiaries() {
+		return listBenificiaries;
+	}
+
+	public void setListBenificiaries(List<Beneficiary> listBenificiaries) {
+		this.listBenificiaries = listBenificiaries;
+	}
+
 	public Project() {
 		
 	}
@@ -64,6 +85,22 @@ public class Project {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public List<Task> getListTasks() {
+		return listTasks;
+	}
+
+	public void setListTasks(List<Task> listTasks) {
+		this.listTasks = listTasks;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 }

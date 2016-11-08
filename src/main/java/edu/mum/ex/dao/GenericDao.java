@@ -2,10 +2,10 @@ package edu.mum.ex.dao;
 
 public interface GenericDao {
 	
-	public void create();
+	public void create(Object obj);
 	public void update();
 	public void delete();
 	public void readAll();
-	public void readById();
+	public Object readById(int id);
 	
 }
