@@ -1,6 +1,7 @@
 package edu.mum.hw2.domain;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Lob;
 
 @Embeddable
 public class Beneficiary {
@@ -8,6 +9,7 @@ public class Beneficiary {
 	private String name;
 	private String city;
 	private String phone;
+	@Lob
 	private byte[] pic;
 	
 	public Beneficiary() {

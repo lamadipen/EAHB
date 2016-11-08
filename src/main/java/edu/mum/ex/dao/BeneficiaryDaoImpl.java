@@ -5,9 +5,9 @@ import javax.persistence.EntityTransaction;
 
 import edu.mum.ex.util.HibernetUtil;
 
-public class TaskDaoImpl implements GenericDao{
+public class BeneficiaryDaoImpl implements GenericDao {
 
-	public TaskDaoImpl() {
+	public BeneficiaryDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -33,19 +33,19 @@ public class TaskDaoImpl implements GenericDao{
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void readAll() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -53,7 +53,5 @@ public class TaskDaoImpl implements GenericDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
 
 }

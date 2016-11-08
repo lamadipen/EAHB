@@ -208,7 +208,7 @@ public class ProjectDaoImpl implements GenericDao {
 		try {
 			tx.begin();
 			
-			Query query = em.createQuery("from Project p join p.task");
+			Query query = em.createQuery("from Project p join p.task t join t.user u order by p.endDate");
 			query.setParameter("searchStr", Key);
 			List<Project> plist= query.getResultList();
 			
